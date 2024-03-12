@@ -42,7 +42,7 @@ params:
     pinterest:
     rss: true
     keybase:
-    twitter: fgfgf
+    twitter:
     stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
     youtube: # channel/<your_long_string> or user/<user-name>
 
