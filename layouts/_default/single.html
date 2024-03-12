@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="page">
+  <div class="header-container">
+    <h2>{{ .Title }}</h2>
+    <div class="improve hide-on-mobiles">
+      <a href="{{ .Site.Params.github.repoURL }}/edit/master/{{ .File.Path }}" title="Help improve page {{ .File.Filename }}">Improve this page</a>
+    </div>
+  </div>
+  <div class="entry">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

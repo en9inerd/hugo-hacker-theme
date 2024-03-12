@@ -1,0 +1,11 @@
+{{ $socialLinks := .Site.Params.socialLinks }}
+{{ range $key, $value := $socialLinks }}
+  {{ with $value }}
+    {{ $social := index (where site.Data.socials "resource" $key) 0 }}
+    {{ if $social }}
+      <a href="{{ if ne $key "rss" }}{{ path.Join $social.url $value }}{{ else }}{{ $social.url }}{{ end }}">
+        <i class="svg-icon icon-{{ $social.icon }}"></i>
+      </a>
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,14 @@
+{{ partialCached "svg-icons.html" . }}
+{{ if and (eq .Title "About") (.Site.Params.pgp_key.show) }}
+<p class="pgp_key">
+  <a href="{{ .Site.Params.pgp_key.url }}">PGP:
+    <code>{{ .Site.Params.pgp_key.fingerprint }}</code>
+  </a>
+</p>
+{{ end }}
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+{{ $earliestPost := index $posts (sub (len $posts) 1) }}
+{{ $earliestDate := $earliestPost.Date.Format "2006" }}
+{{ $currentDate := time.Now.Format "2006" }}
+<span class="copyright">&copy; {{ $earliestDate }}{{ if ne $earliestDate $currentDate }} - {{ $currentDate }}{{ end }}
+  {{ .Site.Params.social.name }}</span>

@@ -1,0 +1,65 @@
+baseURL: 'https://example.org/'
+languageCode: 'en-us'
+
+# Name of your site (displayed in the header)
+title: Hacker theme
+
+enableRobotsTXT: true
+
+# permalinks:
+#   section:
+#     posts: "/:sections[1:]/"
+
+params:
+  # Short bio or description (displayed in the header)
+  description: Hacker is a theme for GitHub Pages.
+
+  github:
+    repoURL: 'https://repo'
+
+  # JSON-LD
+  bio:
+    gender: male
+    employerName: Unknown
+    employerUrl: https://unknown.com
+    jobTitle: mock
+
+  # JSON-LD
+  social:
+    name: John Doe
+    links: 
+      - https://github.com/John-Doe
+
+  # Includes an icon in the footer for each username you enter
+  socialLinks:
+    dribbble:
+    email:
+    facebook:
+    flickr:
+    github:
+    instagram:
+    linkedin:
+    pinterest:
+    rss: true
+    keybase:
+    twitter: fgfgf
+    stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+    youtube: # channel/<your_long_string> or user/<user-name>
+
+  monitor: false
+
+  pgpKey:
+    show: false
+    url:
+    fingerprint:
+
+  dateFormat: "January 2, 2006 at 15:04 MST"
+
+taxonomies:
+  tag: tags
+
+timeZone: 'UTC'
+
+module:
+  hugoVersion:
+    extended: true

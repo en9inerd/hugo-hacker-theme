@@ -1,0 +1,5 @@
+<a id="a-title" href="{{ "" | relURL }}">
+  <h1>{{ .Site.Title }}</h1>
+</a>
+<h2>{{ .Site.Params.description }}</h2>
+{{ partialCached "navigation.html" . }}

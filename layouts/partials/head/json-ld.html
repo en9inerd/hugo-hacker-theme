@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": {{ .Site.Params.Author.name }},
+  "email": {{ .Site.Params.socialLinks.email }},
+  "gender": {{ .Site.Params.bio.gender }},
+  "image": {{ .Site.Params.logo | absURL }},
+  "url": {{ .Site.BaseURL }},
+  "jobTitle": {{ .Site.Params.bio.job_title }},
+  "worksFor": {
+    "@type": "Organization",
+    "name": {{ .Site.Params.bio.employer_name }},
+    "url": {{ .Site.Params.bio.employer_url }}
+  },
+  "sameAs": {{ .Site.Params.social.links }}
+}
+</script>

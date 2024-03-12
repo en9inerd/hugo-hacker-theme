@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="posts">
+  {% for post in paginator.posts %}
+  <article class="post">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <div class="post-info">
+      <time class="smaller" datetime="{{ post.date | date_to_xmlschema }}">
+        Posted on {{ post.date | date: "%B %e, %Y at %R %Z" }}
+      </time>
+    </div>
+
+    <div class="entry">
+      {{ post.excerpt }}
+    </div>
+
+    <div class="post-footer">
+      {% if site.disqus %}<a href="{{ post.url | relative_url }}#disqus_thread">0 Comments</a>{% endif %}
+      {% if post.excerpt != post.content %}
+      <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous-page">&lt;--
+    Previous</a>
+  {% else %}
+  <span class="previous-page">&lt;-- Previous</span>
+  {% endif %}{% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next-page">Next
+    --&gt;</a>
+  {% else %}
+  <span class="next-page">Next --&gt;</span>
+  {% endif %}
+</div>
+{% endif %}
+{{ end }}

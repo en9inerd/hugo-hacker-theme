@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="post">
+  <div class="header-container">
+    <h2>{{ .Title }}</h2>
+    <div class="improve hide-on-mobiles">
+      <a href="{{ .Site.Params.github.repoURL }}/edit/master/{{ .File.Path }}" title="Help improve post {{ .File.Path }}">Improve this post</a>
+    </div>
+  </div>
+  <div class="post-info">
+    {{ with .Params.tags }}
+      <span>Tags = [
+        {{ $tags := . }}
+        {{ range $index, $tag := $tags }}
+          <a href="{{ site.Home.Permalink }}{{ "tags" | relLangURL }}#{{ $tag | urlize }}" class="post-tag">{{ $tag }}</a>{{ if ne $index (sub (len $tags) 1) }},{{ end }}
+        {{ end }}
+        ]
+      </span>
+    {{ end }}
+    <time class="post-time smaller" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+      Posted on {{ .Date.Format "January 2, 2006 at 15:04 MST" }}
+    </time>
+  </div>
+  <div class="entry">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

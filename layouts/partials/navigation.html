@@ -1,0 +1,8 @@
+<nav id="navbar">
+  {{ range $path := $.Site.Data.nav_pages }}
+    {{ with $.Site.GetPage $path }}
+      <a href="{{ .RelPermalink }}" class="btn">{{ .Title }}</a>
+    {{ end }}
+  {{ end }}
+  <a href="{{ .Site.Params.github.owner_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+</nav>
